@@ -1,0 +1,21 @@
+ods graphics / reset width=6.4in height=4.8in imagemap;
+
+proc sort data=WORK.IMPORT out=_SeriesPlotTaskData;
+	by Year;
+run;
+
+proc sgplot data=_SeriesPlotTaskData;
+	title height=12pt "Female Cancer Mortality-Incidence Age-Adjusted Rate Ratio 2000-2018";
+	series x=Year y='Mortality-Incidence Age-Adjusted'n / 
+		group='Leading Cancer Sites'n lineattrs=(thickness=3);
+	xaxis grid values=(2000 2005 2010 2015 2018) valueshint;
+	yaxis grid values=(0 to 0.6 by 0.1);
+	yaxis label="Rate Ratio";
+run;
+
+ods graphics / reset;
+title;
+
+proc datasets library=WORK noprint;
+	delete _SeriesPlotTaskData;
+	run;
