@@ -1,8 +1,3 @@
-/* Generated Code (IMPORT) */
-/* Source File: United States and Puerto Rico Cancer Statistics, 1999-2018 Mortality Incidence Rate Ratios.xlsx */
-/* Source Path: /home/u59907551 */
-/* Code generated on: 5/10/22, 6:36 PM */
-
 %web_drop_table(WORK.IMPORT);
 
 
